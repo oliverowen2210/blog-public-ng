@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { TimeagoModule } from 'ngx-timeago';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { AppComponent } from './app.component';
 import {
@@ -33,6 +34,9 @@ const socketConfig: SocketIoConfig = {
     CommentsListComponent,
   ],
   imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TimeagoModule.forRoot(),
     SocketIoModule.forRoot(socketConfig),
   ],
   providers: [],
