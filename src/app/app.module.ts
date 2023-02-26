@@ -29,6 +29,8 @@ const socketConfig: SocketIoConfig = {
     PostsListComponent,
     LayoutComponent,
     PostCardComponent,
+    PostCommentFormComponent,
+    CommentsListComponent,
   ],
   imports: [
     SocketIoModule.forRoot(socketConfig),
