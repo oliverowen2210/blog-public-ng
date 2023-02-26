@@ -5,7 +5,11 @@
     </div>
     <ng-template #postsMap>
       <ng-container *ngIf="posts.length; else postsLoading">
-        <post-card *ngFor="let post of posts; trackBy: trackById" [post]="post">
+        <post-card
+          class="postCard"
+          *ngFor="let post of posts; trackBy: trackById"
+          [post]="post"
+        >
         </post-card>
       </ng-container>
       <ng-template #postsLoading>
