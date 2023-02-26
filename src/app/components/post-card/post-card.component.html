@@ -16,9 +16,12 @@
         </a>
       </p>
       <p class="postCardDate">
-        Posted on format(new Date(props.post.createdAt), "MMMM Do, yyyy")
+        Posted on {{ post.createdAt | date : "longDate" }}
       </p>
-      <p class="postCardComments"></p>
+      <p class="postCardComments">
+        {{ post.commentCount }}
+        {{ post.commentCount === 1 ? "comment" : "comments" }}
+      </p>
     </div>
   </div>
 </div>
