@@ -1,0 +1,15 @@
+<div class="commentsList">
+  <div
+    *ngFor="let comment of comments; trackById"
+    [ngClass]="{ newCard: comment.isNew }"
+    class="comment"
+  >
+    <div class="commentHeader flexRow">
+      <h4 class="commentAuthor">{{ comment.username }} says</h4>
+      <p class="commentDate">
+        {{ comment.createdAt | timeago : live }}
+      </p>
+    </div>
+    <p class="commentBody">{{ comment.text }}</p>
+  </div>
+</div>
