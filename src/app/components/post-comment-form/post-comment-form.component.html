@@ -1,0 +1,22 @@
+<form class="userComment">
+  <div class="postFormInputGroup userCommentText">
+    <label for="content">Leave a comment</label>
+    <textarea name="content" [(ngModel)]="content">
+       {commentText}
+     </textarea
+    >
+  </div>
+  <div class="userCommentFooter">
+    <div class="postFormInputGroup userCommentUsername">
+      <label for="username">Username (optional)</label>
+      <input name="username" placeholder="Anonymous" [(ngModel)]="username" />
+    </div>
+    <button
+      class="userCommentSubmitButton"
+      (click)="submitCommentButtonHandler()"
+      [disabled]="content.length < 1 || submitDisabled"
+    >
+      Submit
+    </button>
+  </div>
+</form>
