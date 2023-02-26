@@ -1,3 +1,45 @@
-<p>post-detail works!</p>
-<h2>Post ID is {{ postId }}</h2>
-<h4>Blog API URI is {{ blogApiUri }}</h4>
+<div *ngIf="errorMessage; else postDetail">
+  <p>{{ errorMessage }}</p>
+</div>
+<ng-template #postDetail class="postDetailWrapper">
+  <ng-container *ngIf="post; else postLoading">
+    <div class="postDetail" key="{post.id}">
+      <div class="postDetailHeader flexRow">
+        <h2 class="postDetailTitle">{{ post.title }}</h2>
+      </div>
+
+      <div class="postDetailInfo flexRow">
+        <p>
+          By
+          <a href="https://github.com/oliverowen2210" class="postDetailLink">
+            Oliver Owen
+          </a>
+        </p>
+        <p class="postDetailDate">
+          Posted on {{ post.createdAt | date : "longDate" }}
+        </p>
+        <p class="postDetailComments">
+          {{ comments.length }}
+          {{ comments.length < 2 ? "comment" : "comments" }}
+        </p>
+      </div>
+      <div class="postDetailBody" [innerHTML]="sanitizedPostText"></div>
+    </div>
+
+    <div class="postComments">
+      <h2>Comments</h2>
+      <post-comment-form [postId]="postId"></post-comment-form>
+      <comments-list
+        *ngIf="comments; else noComments"
+        [comments]="comments"
+      ></comments-list>
+      <ng-template #noComments
+        >There are no comments on this post yet. Write one above!</ng-template
+      >
+    </div>
+  </ng-container>
+
+  <ng-template #postLoading>
+    <p>Loading...</p>
+  </ng-template>
+</ng-template>
