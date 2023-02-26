@@ -1,7 +1,13 @@
-<p>header</p>
-<div>
-  <a href="post/1">post detail</a>
-
-  <a href="/">all posts</a>
+<div class="layoutWrapper">
+  <div class="layout flexCol">
+    <div class="layoutHeader">
+      <a href="/">
+        <h1>Blog API</h1>
+      </a>
+    </div>
+    <div class="layoutBody">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="layoutFooter"></div>
+  </div>
 </div>
-<router-outlet></router-outlet>
