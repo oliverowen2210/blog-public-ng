@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { Post } from 'src/app/interfaces/Post.interface';
+import { Post } from 'src/app/interfaces';
 
 @Component({
   selector: 'post-card',
