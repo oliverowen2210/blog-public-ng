@@ -3,10 +3,7 @@ import { environment } from 'src/environments/environment';
 import axios from 'axios';
 import socket from '../../../socket';
 
-interface Post {
-  id: number;
-  isNew?: boolean;
-}
+import { Post } from '../../interfaces/Post.interface';
 
 @Component({
   selector: 'posts-list',
