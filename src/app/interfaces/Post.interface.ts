@@ -4,4 +4,5 @@ export interface Post {
   createdAt: Date;
   commentCount: number;
   isNew?: boolean;
+  text: string;
 }
