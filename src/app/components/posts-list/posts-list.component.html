@@ -1,1 +1,16 @@
-<p>posts-list works!</p>
+<div className="postsListWrapper">
+  <div className="postsList">
+    <div *ngIf="errorMessage; else postsMap">
+      <p>{{ errorMessage }}</p>
+    </div>
+    <ng-template #postsMap>
+      <ng-container *ngIf="posts.length; else postsLoading">
+        <post-card *ngFor="let post of posts; trackBy: trackById" [post]="post">
+        </post-card>
+      </ng-container>
+      <ng-template #postsLoading>
+        <p>Loading...</p>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>
