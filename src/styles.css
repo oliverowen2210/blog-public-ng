@@ -1,1 +1,481 @@
-/* You can add global styles to this file, and also import other style files */
+.App {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screenBlock {
+  background-color: rgba(0, 0, 0, 0.185);
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.layoutWrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.layout {
+  z-index: 0;
+  position: relative;
+}
+
+.modalWrapper {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.modal {
+  z-index: 3;
+  width: 350px;
+  height: 300px;
+  background-color: white;
+  border-radius: 1em;
+  padding: 12px 24px;
+  position: relative;
+}
+
+.modalHeader {
+  justify-content: space-between;
+}
+
+.modalCloseButtonWrapper {
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalCloseButton {
+  height: 30px;
+}
+
+.modalHeaderInvisibleDiv {
+  width: 50px;
+}
+
+.modalBody {
+  flex-grow: 1;
+}
+
+.modalFooter {
+  height: 33%;
+}
+
+.layoutHeader {
+  background-color: rgb(37, 37, 37);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+  height: fit-content;
+  margin-bottom: 24px;
+}
+
+.layoutBody {
+  display: flex;
+  justify-content: center;
+}
+
+.postsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postCardWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.postCard {
+  border: 3px solid rgb(56, 60, 71);
+  box-shadow: 0px 0px 3px rgb(72, 72, 94);
+  min-width: fit-content;
+  background-color: white;
+  border-radius: 1em;
+  margin-bottom: 32px;
+  padding: 8x 0;
+  position: relative;
+}
+
+.postCard:hover {
+  outline: 2px solid rgb(0, 0, 0);
+}
+
+.postCardHeader,
+.postCardInfo,
+.postCardBody,
+.postCardFooter {
+  padding: 0 36px;
+}
+
+.postCardInfo,
+.postCardBody {
+  border-bottom: 1px solid rgb(102, 107, 122);
+}
+
+.postCardHeader {
+  min-height: 36px;
+  height: fit-content;
+  width: 100%;
+  box-sizing: border-box;
+  max-height: 140px;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+.postCardTitle {
+  margin: 8px 0px;
+}
+
+.postCardTitleLink::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.postCardInfo p {
+  margin: 8px 0 16px;
+}
+
+.postCardBody {
+  height: 125px;
+}
+
+.postDetailWrapper {
+  margin-top: 32px;
+}
+
+.postDetail {
+  background-color: white;
+  width: 60vw;
+  max-width: 1500px;
+  padding: 12px 0;
+  border-radius: 1em;
+  border: 4px solid black;
+  box-shadow: 0px 0px 3px rgb(78, 78, 104);
+  margin-bottom: 32px;
+}
+
+.postDetailHeader,
+.postDetailInfo,
+.postDetailBody {
+  padding: 0 24px;
+}
+
+.postDetailHeader {
+  padding: 0 24px;
+  height: 32px;
+}
+
+.postDetailTitle {
+  margin: 0;
+}
+
+.postDetailInfo {
+  border-bottom: 1px solid rgb(102, 107, 122);
+}
+
+.postCardLink {
+  position: relative;
+}
+
+.postCardLink,
+.postDetailLink,
+.postCardLink:visited,
+.postDetailLink:visited {
+  color: rgb(20, 114, 255);
+}
+
+.postCardLink::after,
+.postDetailLink::after,
+.postCardDate::after,
+.postDetailDate::after {
+  content: "•";
+  margin: 0px 6px;
+  color: black;
+}
+
+.postDetailBody {
+  min-height: 350px;
+  height: fit-content;
+
+  word-break: break-word;
+}
+
+.postFormInputGroup {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.1em;
+  height: 60px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.postFormPublishRadio > input {
+  margin-left: 8px;
+  margin-right: 16px;
+  outline: none;
+}
+
+.postFormPublishRadio > input:focus {
+  outline: 1px solid gray;
+}
+
+.postFormInputGroup > input,
+.postFormInputGroup > textarea {
+  border-radius: 0.5em;
+  font-size: 1.1em;
+  padding: 4px 8px;
+  outline: 2px solid black;
+  box-shadow: 0px 0px 3px darkblue;
+  color: rgb(66, 66, 66);
+  border: none;
+}
+
+.postFormInputGroup > input:focus {
+  outline: 3px solid black;
+  color: black;
+  box-shadow: 0px 0px 5px darkblue;
+}
+
+.userComment {
+  margin-bottom: 24px;
+  border-bottom: 1px solid gray;
+}
+
+.userCommentText {
+  height: 120px;
+  width: 400px;
+}
+
+.userCommentText textarea {
+  height: 80px;
+  resize: none;
+
+  box-shadow: 0px 0px 2px rgb(78, 78, 103);
+}
+
+.userCommentFooter {
+  display: flex;
+  flex-direction: row;
+}
+
+.userCommentUsername {
+  width: 285px;
+  margin-right: 35px;
+}
+
+.userCommentSubmitButton {
+  width: fit-content;
+  height: fit-content;
+  align-self: center;
+  position: relative;
+  top: 3px;
+}
+
+.userCommentSubmitButton:disabled {
+  cursor: default;
+  background-color: gray;
+  color: rgb(233, 233, 233);
+}
+
+.userCommentSubmitButton:disabled:hover {
+  color: rgb(233, 233, 233);
+}
+
+.commentsList {
+  margin-bottom: 32px;
+}
+
+.comment {
+  background-color: white;
+  padding: 12px;
+  min-width: 20em;
+  width: fit-content;
+  max-width: min(60vw, 1500px);
+  box-sizing: border-box;
+  border-radius: 1em;
+  border: 2px solid black;
+  box-shadow: 0px 0px 2px rgb(78, 78, 104);
+  margin-bottom: 24px;
+}
+
+.comment.newCard,
+.postCard.newCard {
+  animation: newCardGlow 4s ease-in 0s 1 normal;
+}
+
+.commentHeader > *,
+.commentBody {
+  margin: 3px 0;
+}
+
+.commentHeader {
+  margin-bottom: 8px;
+}
+
+.commentAuthor {
+  margin-right: 8px;
+}
+
+.commentDate {
+  color: rgb(90, 90, 90);
+}
+
+.commentBody {
+  overflow-wrap: break-word;
+}
+
+@keyframes newCardGlow {
+  from {
+    box-shadow: 0px 0px 12px gold;
+    background-color: #fff9da;
+  }
+
+  to {
+    box-shadow: 0px 0px 2px rgb(78, 78, 104);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .postDetailLink::after,
+  .postDetailDate::after {
+    content: "";
+  }
+
+  .postDetailHeader {
+    justify-content: center;
+  }
+
+  .postDetailTitle,
+  .postDetailInfo {
+    text-align: center;
+  }
+
+  .postDetailBody {
+    min-height: 275px;
+  }
+
+  .userCommentText,
+  .userCommentFooter {
+    width: 100%;
+  }
+
+  .userCommentUsername {
+    width: 75%;
+  }
+
+  .comment {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .postCardInfo {
+    flex-direction: column;
+  }
+
+  .postCardInfo p {
+    margin: 10px 0;
+  }
+
+  .postCardLink::after,
+  .postCardDate::after {
+    content: none;
+  }
+
+  .postDetail {
+    margin: 0 auto;
+    width: 70vw;
+  }
+
+  .postDetailInfo {
+    margin-top: 12px;
+    flex-direction: column;
+  }
+
+  .postDetailBody {
+    min-height: 100px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .postDetail {
+    width: 80vw;
+    padding: 4px 8px;
+    margin-bottom: 32px;
+  }
+
+  .postComments {
+    border-top: 2px solid gray;
+  }
+
+  .postComments h2 {
+    text-align: center;
+  }
+
+  .userCommentText {
+    align-items: center;
+    width: auto;
+  }
+
+  .userCommentText textarea {
+    width: 80vw;
+  }
+
+  .userCommentFooter {
+    flex-direction: column;
+  }
+
+  .userCommentUsername {
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .userCommentUsername label {
+    margin-bottom: 9px;
+  }
+
+  .userCommentUsername input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .userCommentSubmitButton {
+    width: 100%;
+  }
+
+  .userComment {
+    padding-bottom: 32px;
+    border-bottom: 2px solid gray;
+  }
+
+  .commentsList {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .comment {
+    min-width: 80vw;
+  }
+}
