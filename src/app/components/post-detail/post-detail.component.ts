@@ -20,6 +20,7 @@ export class PostDetailComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {
     this.socketService.getNewComment().subscribe((comment: BlogComment) => {
+      if (comment.postid !== this.postId) return;
       comment.isNew = true;
       console.log('new comment');
       this.comments.unshift(comment);
