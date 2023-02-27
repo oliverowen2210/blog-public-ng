@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "https://oliverowen2210.github.io/blog-public-ng/",
             "outputPath": "dist/blog-public-ng",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -85,6 +86,9 @@
             "styles": ["src/styles.css"],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
